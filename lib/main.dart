@@ -27,9 +27,9 @@ class MyApp extends StatelessWidget {
       ),
       //it will directly open thhe home page
       //initialRoute: "/home",
-      initialRoute: "/login",
+      
 routes: {
- // "/":(context) => Loginpage(),
+  "/":(context) => Loginpage(),
   "/home":(context)=> Homepage(),
   "/login":(context) => Loginpage()
 }

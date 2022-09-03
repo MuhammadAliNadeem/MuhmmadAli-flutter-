@@ -10,18 +10,20 @@ class Homepage extends StatelessWidget {
   Widget build(BuildContext context) {
    
     return Scaffold(
+      resizeToAvoidBottomInset: false,
        appBar: AppBar(
         // ignore: prefer_const_constructors
-        title: Center(child: Text("Dream App")),
+        title: Center(child: Text("Catalog App")),
        ),
         body: Center(
+        
            child: Container(
             child:Text("This is $days days flutter application by $name "),
            ),
          ),
-       // ignore: prefer_const_constructors
-       drawer: Drawer(),
-     );
+        );
+       // ignore: prefer_const_constructors, dead_code, unused_label
+       drawer: Drawer() ;
     
     
   }

@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:practice/hompage.dart';
 import 'package:practice/loginpage.dart';
+import 'package:practice/utils/routes.dart';
 //import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -25,13 +26,15 @@ class MyApp extends StatelessWidget {
      // primaryTextTheme: GoogleFonts.latoTextTheme()
       
       ),
+      //
+      //debugShowCheckedModeBanner: false,
       //it will directly open thhe home page
       //initialRoute: "/home",
       
 routes: {
   "/":(context) => Loginpage(),
-  "/home":(context)=> Homepage(),
-  "/login":(context) => Loginpage()
+  MyRoutes.HomeRoute:(context)=> Homepage(),
+  MyRoutes.LoginRoute:(context) => Loginpage()
 }
     );
     

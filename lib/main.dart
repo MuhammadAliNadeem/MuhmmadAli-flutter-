@@ -18,6 +18,8 @@ class MyApp extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
+    //  git config user.email "an1284005@gmail.com"
+    //  git config user.name "MuhmmadAli-flutter-"
     // ignore: prefer_const_constructors
     return MaterialApp(
       // ignore: prefer_const_constructors

@@ -1,7 +1,7 @@
 // ignore_for_file: avoid_unnecessary_containers
 
 import 'package:flutter/material.dart';
-//import 'package:practice/utils/routes.dart';
+// import 'package:practice/utils/routes.dart';
 
 class Homepage extends StatelessWidget {
   const Homepage({Key? key}) : super(key: key);
@@ -14,7 +14,7 @@ class Homepage extends StatelessWidget {
       resizeToAvoidBottomInset: false,
        appBar: AppBar(
         // ignore: prefer_const_constructors
-        title: Center(child: Text("Catalog App")),
+        title: Center(child: Text("Catalog App",)),
        ),
         body: Center(
         
@@ -23,8 +23,11 @@ class Homepage extends StatelessWidget {
            ),
          ),
         );
+      
        // ignore: prefer_const_constructors, dead_code, unused_label
        drawer: Drawer() ;
+    
+  
     
   
   // ElevatedButton(onPressed:() {

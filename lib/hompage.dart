@@ -1,6 +1,7 @@
-// ignore_for_file: avoid_unnecessary_containers
+// ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors, duplicate_ignore
 
 import 'package:flutter/material.dart';
+import 'package:practice/widgets/drawer.dart';
 // 
 //import 'package:practice/utils/routes.dart';
 
@@ -23,10 +24,11 @@ class Homepage extends StatelessWidget {
             child:Text("This is $days days flutter application by $name "),
            ),
          ),
+         drawer: Mydrawer()
         );
       
-       // ignore: prefer_const_constructors, dead_code, unused_label
-       drawer: Drawer() ;
+       
+       
     
   
     

@@ -94,6 +94,10 @@ child: SingleChildScrollView(
         validator: (value) {
           if(value!.isEmpty){
           return"Please enter user name";}
+          // else if (value.length>12)
+          // {
+          //   return "length should be less then 12";
+          // }
           return null;
         },
          onChanged: ((value) {
@@ -127,7 +131,10 @@ child: SingleChildScrollView(
      if(value!.isEmpty){ return "Please enter password";}
    
     else if(value.length<6){return "Pasword length should be atleast 6 ";}
+    // else if(value.length>10){return "Pasword length should be less than 10 ";}
     return null;
+     
+  
    },
       ),
     

@@ -16,11 +16,13 @@ class Homepage extends StatelessWidget {
       resizeToAvoidBottomInset: false,
        appBar: AppBar(
         // ignore: prefer_const_constructors
-        title: Center(child: Text("Catalog App",)),
+        // backgroundColor: Colors.white,
+        title: Center(child: Text("Catalog App")),
        ),
         body: Center(
         
            child: Container(
+            
             child:Text("This is $days days flutter application by $name "),
            ),
          ),

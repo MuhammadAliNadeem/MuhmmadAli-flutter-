@@ -2,11 +2,13 @@
 
 // ignore_for_file: prefer_const_constructors, duplicate_ignore
 
+// import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:practice/hompage.dart';
 import 'package:practice/loginpage.dart';
 import 'package:practice/utils/routes.dart';
-//import 'package:google_fonts/google_fonts.dart';
+import 'package:practice/widgets/theme.dart';
+// import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,12 +24,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       
       
-      theme: ThemeData(brightness: Brightness.light,
-      primarySwatch: Colors.indigo,
-      //fontFamily: GoogleFonts.lato().fontFamily,
-     // primaryTextTheme: GoogleFonts.latoTextTheme()
-      
-      ),
+       theme: Mytheme.lightTheme(context),
+      darkTheme: Mytheme.darkTheme(context),
       debugShowCheckedModeBanner: false,
       
       //it will directly open thhe home page

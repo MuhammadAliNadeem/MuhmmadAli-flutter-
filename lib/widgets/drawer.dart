@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 class Mydrawer extends StatelessWidget {
   const Mydrawer({Key? key}) : super(key: key);
-final imageURL="https://www.facebook.com/photo/?fbid=2953759611538345&set=a.1378829592364696";
+final imageURL="https://www.gizmochina.com/wp-content/uploads/2020/05/iphone-12-pro-max-family-hero-all-600x600.jpg";
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -22,9 +22,9 @@ final imageURL="https://www.facebook.com/photo/?fbid=2953759611538345&set=a.1378
                   margin: EdgeInsets.zero,
                   accountName: Text("Muhammad ALi",style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold)),
                  accountEmail: Text("an1284005@gmail.com",style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold)),
-                 currentAccountPicture: //Image.network(imageURL)
+                  currentAccountPicture: //Image.network(imageURL,height: 50,width: 5,),
                 CircleAvatar(
-                  backgroundImage: NetworkImage(imageURL),backgroundColor: Colors.blueGrey,
+                  backgroundImage: NetworkImage(imageURL),
                  ),
                  )
                  

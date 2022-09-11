@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, avoid_print
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -30,6 +30,9 @@ final imageURL="https://www.gizmochina.com/wp-content/uploads/2020/05/iphone-12-
                  
     ) ,
 ListTile(
+  onTap: () {
+    print("Home pressed");
+  },
 leading:  Icon(CupertinoIcons.home,color: Colors.white),
 title: Text("Home", style: TextStyle(color: Colors.white,fontSize: 18))
 ),

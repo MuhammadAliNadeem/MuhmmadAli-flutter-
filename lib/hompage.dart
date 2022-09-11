@@ -1,7 +1,11 @@
 // ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors, duplicate_ignore
 
 import 'package:flutter/material.dart';
+import 'package:practice/models/catalog.dart';
 import 'package:practice/widgets/drawer.dart';
+import 'package:practice/widgets/items_widget.dart';
+
+import 'models/catalog.dart';
 // 
 //import 'package:practice/utils/routes.dart';
 
@@ -11,7 +15,7 @@ class Homepage extends StatelessWidget {
     final String name ="Muhammad_Ali";
   @override
   Widget build(BuildContext context) {
-   
+   final dummyList =List.generate(5, (index) => CatalogModel.items[0]);
     return Scaffold(
       resizeToAvoidBottomInset: false,
        appBar: AppBar(
@@ -19,13 +23,17 @@ class Homepage extends StatelessWidget {
         // backgroundColor: Colors.white,
         title: Center(child: Text("Catalog App")),
        ),
-        body: Center(
-        
-           child: Container(
-            
-            child:Text("This is $days days flutter application by $name "),
-           ),
-         ),
+         body: ListView.builder(
+            itemCount: dummyList.length,
+            itemBuilder: (context, index) {
+              return ItemWidget(
+                item: dummyList[index]
+                );
+              
+            },
+      
+             ),
+         
          drawer: Mydrawer()
         );
       

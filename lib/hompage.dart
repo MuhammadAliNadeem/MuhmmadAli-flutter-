@@ -1,4 +1,4 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
+// ignore_for_file: public_member_api_docs, sort_constructors_first, unnecessary_null_comparison, unused_import, sort_child_properties_last
 // ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors, duplicate_ignore, avoid_print
 
 import 'dart:convert';
@@ -53,16 +53,47 @@ class _HomepageState extends State<Homepage> {
         // backgroundColor: Colors.white,
         title: Center(child: Text("Catalog App")),
        ),
-         body:(CatalogModel.items!= null && CatalogModel.items.isNotEmpty)? ListView.builder(
-            itemCount: CatalogModel.items.length,
-            itemBuilder: (context, index) {
-              return ItemWidget(
-                item: CatalogModel.items[index]
-                );
-              
-            },
-      
-             ): Center(child: CircularProgressIndicator()),
+         body:(CatalogModel.items!= null && CatalogModel.items.isNotEmpty)?
+          // ListView.builder(
+          //   itemCount: CatalogModel.items.length,
+          //   itemBuilder: (context, index) {
+          //     return ItemWidget(
+          //       item: CatalogModel.items[index]
+          //       );
+          //       },
+          // )
+      GridView.builder(
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2,
+        mainAxisSpacing: 20,
+        crossAxisSpacing: 20,
+        ),
+       itemBuilder: (context, index) {
+         final items =CatalogModel.items[index];
+         return Card(
+          shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(10)),
+          clipBehavior: Clip.antiAlias,
+          shadowColor: Colors.black,
+           child: GridTile(
+                 
+                 header: Container(
+                  child: Text(items.name,style: TextStyle(color: Colors.white),),
+                  decoration: BoxDecoration( color: Colors.deepPurple),
+                  padding: const EdgeInsets.all(5),
+                  ),
+                 child:Image.network(items.image), 
+                 footer: Container(
+                  child: Text("\$${items.price.toString()}",style: TextStyle(color: Colors.white),),
+                  decoration: BoxDecoration( color: Colors.black),
+                  padding: const EdgeInsets.all(5),
+                  ),
+                 
+           ),
+         );
+       },
+       itemCount: CatalogModel.items.length,
+       )
+      : Center(child: CircularProgressIndicator()),
          
          drawer: Mydrawer()
         );

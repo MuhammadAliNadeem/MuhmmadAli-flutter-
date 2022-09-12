@@ -18,7 +18,7 @@ final String image;
     required this.id, required this.name,required this.des,required this.price,required this.color,
     required this.image, });
     
-
+// All below work is done by "dart data class generator Extension"//
   Item copyWith({
     int? id,
     String? name,
@@ -91,7 +91,7 @@ final String image;
       image.hashCode;
   }
 }
-
+// until here//
 
 
   

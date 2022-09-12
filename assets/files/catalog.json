@@ -6,7 +6,7 @@
          "des": "Apple iphone 14th generation",
           "price":1199 ,
            "color": "#33505a",
-            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjwnba1EV1n4HSy0Ym8iI2Hy3r5elz_NxIjPU0yAUQ2Q&s"
+            "image": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202209/iphone_14_pro__2_1200x768.jpeg?PhBv2AOy9Vqna1u9QESMOXT7rHBpycGZ&size=770:433"
            },
         {   "id": 1,
         "name": "Iphone 13 pro max",
@@ -27,7 +27,7 @@
           "des": "Apple iphone 11th generation",
            "price":899 ,
             "color": "#33505a",
-             "image": "https://image.shutterstock.com/image-photo/iphone-11-pro-max-midnight-260nw-1516316675.jpg"
+             "image": "https://www.futuretech.pk/assets/front/products/11_Pro_Hero.jpg"
             },
             {   "id": 4,
             "name": "Iphone XS max",
@@ -41,21 +41,21 @@
                 "des": "Apple iphone 10th generation",
                  "price":699 ,
                   "color": "#33505a",
-                   "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzB9NCkxZ1NfKMdCFKc1Bj3hLXr_TFllbfz8g295FlSw&s"
+                   "image":"https://newmobiles.com.pk/wp-content/uploads/2020/10/Apple-iPhone-XS-price-in-pakistan-400x400.jpg"
                   },
                   {   "id": 6,
                   "name": "Iphone 8 Plus",
                    "des": "Apple iphone 8th generation",
                     "price":599 ,
                      "color": "#33505a",
-                      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3xmcDFvxYiKm8oSN2IvNuajImgnVMl9Ebh_TtkNNRyA&s"
+                      "image": "https://www.apple.com/newsroom/images/product/iphone/standard/8plus_and_8_glass_back_big.jpg.large.jpg"
                      },
                      {   "id": 7,
                      "name": "Iphone 7 Plus",
                       "des": "Apple iphone 10th generation",
                        "price":499 ,
                         "color": "#33505a",
-                         "image": "https://image.shutterstock.com/image-vector/smartphone-mobile-phone-mockup-isolated-260nw-617834879.jpg"
+                         "image": "https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-7-plus-03.jpg"
                         }
     ]
 }

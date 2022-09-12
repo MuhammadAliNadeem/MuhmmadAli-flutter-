@@ -1,15 +1,17 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 // ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors, duplicate_ignore, avoid_print
 
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
 import 'package:practice/models/catalog.dart';
 import 'package:practice/widgets/drawer.dart';
 import 'package:practice/widgets/items_widget.dart';
 
 import 'models/catalog.dart';
-// 
+
 //import 'package:practice/utils/routes.dart';
 
 class Homepage extends StatefulWidget {
@@ -31,14 +33,19 @@ class _HomepageState extends State<Homepage> {
   }
   loadData()
   async{
-    var catalogjson= await rootBundle.loadString("assets/files/catalog.json");
-  var decodeData= jsonDecode(catalogjson);
+  await Future.delayed(Duration(seconds: 2));
+    final catalogjson= await rootBundle.loadString("assets/files/catalog.json");
+  final decodeData= jsonDecode(catalogjson);
   var productData = decodeData["product"];
-  print(productData);
+  CatalogModel.items = List.from(productData).map<Item>((item) => Item.fromMap(item)).toList();
+   
+   setState(() {
+     
+   });
   }
   @override
   Widget build(BuildContext context) {
-   final dummyList =List.generate(5, (index) => CatalogModel.items[0]);
+  //  final dummyList =List.generate(5, (index) => CatalogModel.items[0]);
     return Scaffold(
       resizeToAvoidBottomInset: false,
        appBar: AppBar(
@@ -46,16 +53,16 @@ class _HomepageState extends State<Homepage> {
         // backgroundColor: Colors.white,
         title: Center(child: Text("Catalog App")),
        ),
-         body: ListView.builder(
-            itemCount: dummyList.length,
+         body:(CatalogModel.items!= null && CatalogModel.items.isNotEmpty)? ListView.builder(
+            itemCount: CatalogModel.items.length,
             itemBuilder: (context, index) {
               return ItemWidget(
-                item: dummyList[index]
+                item: CatalogModel.items[index]
                 );
               
             },
       
-             ),
+             ): Center(child: CircularProgressIndicator()),
          
          drawer: Mydrawer()
         );

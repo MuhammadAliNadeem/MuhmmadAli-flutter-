@@ -22,4 +22,5 @@ titleTextStyle:  TextStyle(color: Colors.black,fontSize: 20,fontWeight: FontWeig
       );
       static Color creamcolor =Color.fromARGB(255, 236, 236, 212);
       static Color darkblue =Color(0xff403b58);
+      static Color lightblue =Color.fromARGB(255, 200, 200, 219);
 }

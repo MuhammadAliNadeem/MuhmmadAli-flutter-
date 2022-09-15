@@ -53,7 +53,10 @@ backgroundColor: Mytheme.creamcolor,
       body: SafeArea (
         child: Container(
           padding: Vx.m24,
-         child: Column(children:  [
+          
+         child: Column(
+         crossAxisAlignment: CrossAxisAlignment.start,
+          children:  [
           CatalogHeader(),
           if(CatalogModel.items!=null&& CatalogModel.items.isNotEmpty)
           CatalogList().expand()
@@ -75,7 +78,7 @@ class CatalogHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-            // crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               "Catalog App".text.xl4.bold.color(Mytheme.darkblue).make(),
               "Trending Products".text.xl.blue900.make(),
@@ -109,17 +112,111 @@ class CatalogItems extends StatelessWidget {
   Widget build(BuildContext context) {
     return VxBox(
   
-      child: Row(
+      child: Row( 
          children: [
-          
-          Image.network(catalog.image),
-          Title(color: Colors.black, child: Text(catalog.name,style: TextStyle(fontWeight: FontWeight.bold),textScaleFactor: 1,))
+          CatalogImage(image: catalog.image) ,
+          Expanded(child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        catalog.name.text.lg.bold. color(Mytheme.darkblue).make(),
+        catalog.des.text.bold.textStyle(context.captionStyle).make(),
+        10.heightBox,
+        ButtonBar(
+          alignment: MainAxisAlignment.spaceBetween,
+          buttonPadding: EdgeInsets.zero,
+          children: [
+           "\$${catalog.price}".text.bold.lg.color(Mytheme.darkblue).make(),
+           ElevatedButton(onPressed:() { },
+            child: "Buy".text.make(),
+          style: ButtonStyle(
+            backgroundColor: MaterialStateProperty.all(Colors.blue),
+            shape: MaterialStateProperty.all(StadiumBorder())
+          ),
+            )
+          ],
+        ).pOnly(right: 20)
+      ],
+          ))
          ],
       )
       // py a card means vertical space
-    ).white.square(100).make().py4();
+    ).white.square(120).rounded.make().py16();
   }
 }
+
+class CatalogImage extends StatelessWidget {
+  const CatalogImage({
+    Key? key,
+    required this.image,}):assert (image!=null),super(key: key);
+final String image;
+  @override
+  Widget build(BuildContext context) {
+    return Image.network(image)
+          .box.rounded.p16.make().w40(context).h24(context);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
      // resizeToAvoidBottomInset: false,
       //  appBar: AppBar(
       //   // ignore: prefer_const_constructors

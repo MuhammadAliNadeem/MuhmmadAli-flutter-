@@ -2,8 +2,8 @@
 
 // ignore_for_file: prefer_const_constructors, duplicate_ignore
 import 'package:flutter/material.dart';
-import 'package:practice/hompage.dart';
-import 'package:practice/loginpage.dart';
+import 'package:practice/pages/hompage.dart';
+import 'package:practice/pages/loginpage.dart';
 import 'package:practice/utils/routes.dart';
 import 'package:practice/widgets/theme.dart';
 void main() {

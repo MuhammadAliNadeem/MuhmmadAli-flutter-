@@ -20,7 +20,7 @@ titleTextStyle:  TextStyle(color: Colors.black,fontSize: 20,fontWeight: FontWeig
        static ThemeData darkTheme(BuildContext context) =>ThemeData(
         brightness: Brightness.dark
       );
-      static Color creamcolor =Color.fromARGB(255, 236, 236, 212);
+      static Color creamcolor =Color.fromARGB(255, 228, 228, 211);
       static Color darkblue =Color(0xff403b58);
       static Color lightblue =Color.fromARGB(255, 200, 200, 219);
 }

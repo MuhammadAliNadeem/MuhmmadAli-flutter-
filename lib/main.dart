@@ -2,6 +2,7 @@
 
 // ignore_for_file: prefer_const_constructors, duplicate_ignore
 import 'package:flutter/material.dart';
+import 'package:practice/pages/Cart.dart';
 import 'package:practice/pages/hompage.dart';
 import 'package:practice/pages/loginpage.dart';
 import 'package:practice/utils/routes.dart';
@@ -25,7 +26,8 @@ class MyApp extends StatelessWidget {
 routes: {
   "/":(context) => Loginpage(),
   MyRoutes.HomeRoute:(context)=> Homepage(),
-  MyRoutes.LoginRoute:(context) => Loginpage()
+  MyRoutes.LoginRoute:(context) => Loginpage(),
+  MyRoutes.CartRoute: (context)=>CartPage()
 }
     );
     

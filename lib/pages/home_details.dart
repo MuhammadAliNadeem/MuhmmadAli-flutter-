@@ -11,8 +11,10 @@ class HomeDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-    backgroundColor: Mytheme.creamcolor,
+      appBar: AppBar(
+        backgroundColor:Colors.transparent,
+      ),
+    // backgroundColor: Mytheme.creamcolor,
 bottomNavigationBar:  Container (
   color: Colors.white,
   child:   ButtonBar(
@@ -23,7 +25,7 @@ bottomNavigationBar:  Container (
   
             children: [
   
-             "\$${catalog.price}".text.bold.xl2.color(Mytheme.darkblue).make(),
+             "\$${catalog.price}".text.bold.xl2.color(Mytheme.darkblue).bold.make(),
   
              ElevatedButton(onPressed:() { },
   
@@ -35,9 +37,9 @@ bottomNavigationBar:  Container (
   
               ),
   
-              child: "Buy".text.make(),
+              child: "Add to cart".text.make(),
   
-              ).wh(80, 40)
+              ).wh(120, 40)
   
               ],
   
@@ -53,7 +55,7 @@ body:SafeArea(
     [
   Hero(
     tag: Key(catalog.id.toString()),
-    child: Image.network(catalog.image)).h32(context),
+    child: Image.network(catalog.image)).h24(context),
     Expanded(
   
       child: VxArc(
@@ -72,6 +74,8 @@ body:SafeArea(
         catalog.name.text.xl4.bold.color(Mytheme.darkblue).make(),
         catalog.des.text.xl.textStyle(context.captionStyle).make(),
         10.heightBox,
+        "IPhone, series of smartphones produced by Apple Inc., combining mobile telephone, digital camera, music player, and personal computing technologies. After more than two years of development, the device was first released in the United States in 2007. The iPhone was subsequently released in Europe in 2007 and Asia in 2008."
+        .text.textStyle(context.captionStyle).make().py1().expand(),
 
        ]
        

@@ -41,7 +41,7 @@ class CatalogItems extends StatelessWidget {
 
            ElevatedButton(onPressed:() { },
 
-            child: "Buy".text.make(),
+            child: "Add to cart".text.make(),
 
           style: ButtonStyle(
 

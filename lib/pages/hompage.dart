@@ -2,8 +2,10 @@
 // ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors, duplicate_ignore, avoid_print
 
 import 'dart:convert';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:practice/utils/routes.dart';
 import 'package:practice/widgets/homeWidgets/Catalog_list.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'package:practice/models/catalog.dart';
@@ -48,6 +50,10 @@ class _HomepageState extends State<Homepage> {
   Widget build(BuildContext context) {
   //  final dummyList =List.generate(5, (index) => CatalogModel.items[0]);
     return Scaffold(
+      floatingActionButton: FloatingActionButton(onPressed: (() {Navigator.pushNamed(context, MyRoutes.CartRoute);}  ),
+      child: Icon(CupertinoIcons.cart),
+      backgroundColor: Colors.blue,
+      ),
 backgroundColor: Mytheme.creamcolor,
       body: SafeArea (
         child: Container(
@@ -65,7 +71,7 @@ backgroundColor: Mytheme.creamcolor,
          ),
         ),
       ),
-      drawer: Mydrawer(),
+      drawer: Mydrawer( ),
     );
   
   }

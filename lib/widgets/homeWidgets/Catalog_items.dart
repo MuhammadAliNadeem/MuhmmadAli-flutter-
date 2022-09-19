@@ -18,29 +18,41 @@ class CatalogItems extends StatelessWidget {
   
       child: Row( 
          children: [
-          CatalogImage(image: catalog.image) ,
+          Hero(
+            tag: Key(catalog.id.toString()),
+            child: CatalogImage(image: catalog.image)
+            ) ,
           Expanded(child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
       children: [
         catalog.name.text.lg.bold. color(Mytheme.darkblue).make(),
         catalog.des.text.textStyle(context.captionStyle).make(),
-
         10.heightBox,
+
         ButtonBar(
+
           alignment: MainAxisAlignment.spaceBetween,
           buttonPadding: EdgeInsets.zero,
+          
           children: [
+
            "\$${catalog.price}".text.bold.lg.color(Mytheme.darkblue).make(),
+
            ElevatedButton(onPressed:() { },
+
             child: "Buy".text.make(),
+
           style: ButtonStyle(
+
             backgroundColor: MaterialStateProperty.all(Colors.blue),
+
             shape: MaterialStateProperty.all(StadiumBorder())
-          ),
+
+            ),
             )
-          ],
-        ).pOnly(right: 20)
+            ],
+           ).pOnly(right: 20)
       ],
           ))
          ],

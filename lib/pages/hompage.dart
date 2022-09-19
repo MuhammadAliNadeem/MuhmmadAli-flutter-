@@ -54,11 +54,11 @@ backgroundColor: Mytheme.creamcolor,
           padding: Vx.m24,
           
          child: Column(
-         crossAxisAlignment: CrossAxisAlignment.start,
+         crossAxisAlignment: CrossAxisAlignment.center,
           children:  [
           CatalogHeader(),
           if(CatalogModel.items!=null&& CatalogModel.items.isNotEmpty)
-          CatalogList().expand()
+          CatalogList().py16().expand()
           else
            CircularProgressIndicator().centered().expand()
          ]

@@ -1,9 +1,9 @@
-// ignore_for_file: unnecessary_null_comparison, sort_child_properties_last, prefer_const_constructors, file_names
+// ignore_for_file: unnecessary_null_comparison, sort_child_properties_last, prefer_const_constructors, file_names, deprecated_member_use
 
 import 'package:flutter/material.dart';
 import 'package:practice/models/catalog.dart';
+import 'package:practice/utils/routes.dart';
 import 'package:practice/widgets/homeWidgets/Catalog_image.dart';
-import 'package:practice/widgets/theme.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class CatalogItems extends StatelessWidget {
@@ -26,7 +26,7 @@ class CatalogItems extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        catalog.name.text.lg.bold. color(Mytheme.darkblue).make(),
+        catalog.name.text.lg.bold. color(context.accentColor).make(),
         catalog.des.text.textStyle(context.captionStyle).make(),
         10.heightBox,
 
@@ -37,15 +37,16 @@ class CatalogItems extends StatelessWidget {
           
           children: [
 
-           "\$${catalog.price}".text.bold.lg.color(Mytheme.darkblue).make(),
+           "\$${catalog.price}".text.bold.lg.color(context.accentColor).make(),
+          
 
-           ElevatedButton(onPressed:() { },
+           ElevatedButton(onPressed:() { Navigator.pushNamed(context, MyRoutes.CartRoute);},
 
             child: "Add to cart".text.make(),
 
           style: ButtonStyle(
 
-            backgroundColor: MaterialStateProperty.all(Colors.blue),
+            backgroundColor: MaterialStateProperty.all(context.theme.buttonColor),
 
             shape: MaterialStateProperty.all(StadiumBorder())
 
@@ -58,6 +59,6 @@ class CatalogItems extends StatelessWidget {
          ],
       )
       // py a card means vertical space
-    ).white.square(120).rounded.make().py16();
+    ).color(context.cardColor).square(120).rounded.make().py16();
   }
 }

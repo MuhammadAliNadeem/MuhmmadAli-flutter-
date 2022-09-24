@@ -1,4 +1,4 @@
-// ignore_for_file: file_names
+// ignore_for_file: file_names, deprecated_member_use, unused_import
 
 import 'package:flutter/material.dart';
 import 'package:practice/widgets/theme.dart';
@@ -12,7 +12,7 @@ class CatalogHeader extends StatelessWidget {
     return Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              "Catalog App".text.xl4.bold.color(Mytheme.darkblue).make(),
+              "Catalog App".text.xl4.bold.color(context.theme.accentColor).make(),
               "Trending Products".text.xl.blue900.make(),
             ],
           );

@@ -1,7 +1,8 @@
-// ignore_for_file: prefer_const_constructors_in_immutables, unnecessary_null_comparison, prefer_const_constructors
+// ignore_for_file: prefer_const_constructors_in_immutables, unnecessary_null_comparison, prefer_const_constructors, deprecated_member_use
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:practice/models/catalog.dart';
-import 'package:practice/widgets/theme.dart';
+import 'package:practice/utils/routes.dart';
 import 'package:velocity_x/velocity_x.dart';
 class HomeDetailPage extends StatelessWidget {
   final Item catalog;
@@ -14,9 +15,9 @@ class HomeDetailPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor:Colors.transparent,
       ),
-    // backgroundColor: Mytheme.creamcolor,
+    
 bottomNavigationBar:  Container (
-  color: Colors.white,
+  color: context.cardColor,
   child:   ButtonBar(
 
             alignment: MainAxisAlignment.spaceBetween,
@@ -25,21 +26,24 @@ bottomNavigationBar:  Container (
   
             children: [
   
-             "\$${catalog.price}".text.bold.xl2.color(Mytheme.darkblue).bold.make(),
+             "\$${catalog.price}".text.bold.xl2.color(context.theme.accentColor).bold.make(),
+        FloatingActionButton(onPressed: (() {Navigator.pushNamed(context, MyRoutes.CartRoute);}),
+        backgroundColor: context.theme.buttonColor,
+        child: Icon(CupertinoIcons.cart_fill_badge_plus,color: Colors.white,) ,
+  ),
+            //  ElevatedButton(onPressed:() { Navigator.pushNamed(context, MyRoutes.CartRoute);},
   
-             ElevatedButton(onPressed:() { },
+            // style: ButtonStyle(
   
-            style: ButtonStyle(
+            //   backgroundColor: MaterialStateProperty.all(Colors.blue),
   
-              backgroundColor: MaterialStateProperty.all(Colors.blue),
+            //   shape: MaterialStateProperty.all( StadiumBorder())
   
-              shape: MaterialStateProperty.all( StadiumBorder())
+            //   ),
   
-              ),
+            //   child: "Add to cart".text.make(), 
   
-              child: "Add to cart".text.make(),
-  
-              ).wh(120, 40)
+            //   ).wh(120, 40)
   
               ],
   
@@ -48,6 +52,7 @@ bottomNavigationBar:  Container (
       ,
 
 body:SafeArea(
+  
   bottom: false,
   child:   Column(
   
@@ -63,7 +68,7 @@ body:SafeArea(
       edge: VxEdge.TOP,
       arcType: VxArcType.CONVEY,
     child: Container( 
-      color: Colors.white,
+      color:context.theme.cardColor,
       width: context.screenWidth,
 
 
@@ -71,11 +76,11 @@ body:SafeArea(
 
        children: [
 
-        catalog.name.text.xl4.bold.color(Mytheme.darkblue).make(),
-        catalog.des.text.xl.textStyle(context.captionStyle).make(),
+        catalog.name.text.xl4.bold.color(context.theme.accentColor).make(),
+        catalog.des.text.xl.textStyle(context.captionStyle).color(context.theme.accentColor).make(),
         10.heightBox,
         "IPhone, series of smartphones produced by Apple Inc., combining mobile telephone, digital camera, music player, and personal computing technologies. After more than two years of development, the device was first released in the United States in 2007. The iPhone was subsequently released in Europe in 2007 and Asia in 2008."
-        .text.textStyle(context.captionStyle).make().py1().expand(),
+        .text.textStyle(context.captionStyle).color(context.theme.accentColor).make().py1().expand(),
 
        ]
        

@@ -1,7 +1,8 @@
-// ignore_for_file: prefer_const_constructors, sort_child_properties_last, use_build_context_synchronously, unused_field
+// ignore_for_file: prefer_const_constructors, sort_child_properties_last, use_build_context_synchronously, unused_field, deprecated_member_use
 
 import 'package:flutter/material.dart';
 import 'package:practice/utils/routes.dart';
+import 'package:velocity_x/velocity_x.dart';
 class Loginpage extends StatefulWidget {
   const Loginpage({Key? key}) : super(key: key);
 
@@ -32,14 +33,14 @@ setState(() {
   Widget build(BuildContext context) {
 return Material(
   
-  color: Colors.white,
+  color: context.canvasColor,
 
 child: SingleChildScrollView(
   child:   Form(
     key: _formkey,
-    child: Column( children: [Image.asset("assets/images/hey.png",height: 250,
+    child: Column( children: [Image.asset("assets/images/hey.png",height: 200,
     
-     fit: BoxFit.contain,),
+     fit: BoxFit.contain,).p(25),
     
     
     
@@ -54,7 +55,7 @@ child: SingleChildScrollView(
     style:TextStyle(
     
       fontSize: 28,
-    
+    color: context.accentColor,
       fontWeight: FontWeight.bold
     
     ) 
@@ -145,8 +146,8 @@ child: SingleChildScrollView(
 
     Material (
       
-      borderRadius: BorderRadius.circular(changedbutton?50:15),
-      color: Colors.deepPurple,
+      borderRadius: BorderRadius.circular(changedbutton?50:5),
+      color: context.theme.buttonColor,
       child: InkWell(
         onTap: () => movetoHome(context),
         

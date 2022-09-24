@@ -1,4 +1,4 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first, unnecessary_null_comparison, unused_import, sort_child_properties_last
+// ignore_for_file: public_member_api_docs, sort_constructors_first, unnecessary_null_comparison, unused_import, sort_child_properties_last, deprecated_member_use
 // ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors, duplicate_ignore, avoid_print
 
 import 'dart:convert';
@@ -12,7 +12,6 @@ import 'package:practice/models/catalog.dart';
 import 'package:practice/widgets/drawer.dart';
 import 'package:practice/widgets/items_widget.dart';
 import 'package:practice/widgets/theme.dart';
-import '../models/catalog.dart';
 import '../widgets/homeWidgets/Catalog_header.dart';
 
 //import 'package:practice/utils/routes.dart';
@@ -25,9 +24,7 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
-  final int days=30;
-
-    final String name ="Muhammad_Ali";
+ 
 @override
   void initState() {
     
@@ -36,7 +33,7 @@ class _HomepageState extends State<Homepage> {
   }
   loadData()
   async{
-  await Future.delayed(Duration(seconds: 2));
+  await Future.delayed(Duration(seconds: 1));
     final catalogjson= await rootBundle.loadString("assets/files/catalog.json");
   final decodeData= jsonDecode(catalogjson);
   var productData = decodeData["product"];
@@ -50,11 +47,12 @@ class _HomepageState extends State<Homepage> {
   Widget build(BuildContext context) {
   //  final dummyList =List.generate(5, (index) => CatalogModel.items[0]);
     return Scaffold(
+    
       floatingActionButton: FloatingActionButton(onPressed: (() {Navigator.pushNamed(context, MyRoutes.CartRoute);}  ),
-      child: Icon(CupertinoIcons.cart),
-      backgroundColor: Colors.blue,
+      child: Icon(CupertinoIcons.cart,color: Colors.white,),
+      backgroundColor: context.theme.buttonColor,
       ),
-backgroundColor: Mytheme.creamcolor,
+      backgroundColor: context.canvasColor,
       body: SafeArea (
         child: Container(
           padding: Vx.m24,

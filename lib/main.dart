@@ -16,13 +16,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
    
     return MaterialApp(
-      
+        themeMode: ThemeMode.dark,   
        theme: Mytheme.lightTheme(context),
       darkTheme: Mytheme.darkTheme(context),
+      
       debugShowCheckedModeBanner: false,
       
       //it will directly open thhe home page
-      initialRoute: MyRoutes.HomeRoute,
+      initialRoute: MyRoutes.LoginRoute,
 routes: {
   "/":(context) => Loginpage(),
   MyRoutes.HomeRoute:(context)=> Homepage(),

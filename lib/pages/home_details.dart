@@ -34,19 +34,19 @@ bottomNavigationBar:  Container (
         child: Icon(CupertinoIcons.plus,color: Colors.white,) 
 
          ),
-             ElevatedButton(onPressed:() { Navigator.pushNamed(context, MyRoutes.CartRoute);},
+            //  ElevatedButton(onPressed:() { Navigator.pushNamed(context, MyRoutes.CartRoute);},
   
-            style: ButtonStyle(
+            // style: ButtonStyle(
   
-              backgroundColor: MaterialStateProperty.all(context.theme.buttonColor),
+            //   backgroundColor: MaterialStateProperty.all(context.theme.buttonColor),
   
-              shape: MaterialStateProperty.all( StadiumBorder())
+            //   shape: MaterialStateProperty.all( StadiumBorder())
   
-              ),
+            //   ),
   
-              child: "Add to cart".text.make(), 
+            //   child: "Add to cart".text.make(), 
   
-              ).wh(110, 30)
+            //   ).wh(110, 30)
   
               ],
   

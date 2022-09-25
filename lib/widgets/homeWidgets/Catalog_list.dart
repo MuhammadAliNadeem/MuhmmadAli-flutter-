@@ -14,12 +14,16 @@ class CatalogList extends StatelessWidget {
       shrinkWrap: true,
       itemCount: CatalogModel.items.length,
       itemBuilder: (context, index) {
-final catalog= CatalogModel.items[index];
+    final catalog= CatalogModel.setByPos(index);
 // inkwell gives ontap function
    return InkWell
     (
       onTap: () => Navigator.push(context, MaterialPageRoute(builder: 
-      (context) => HomeDetailPage(catalog: catalog),)),
+      (context) => HomeDetailPage(catalog: catalog),
+      //setById used to get the id you want : 
+      // (context) => HomeDetailPage(catalog: CatalogModel.setById(3)),
+      )
+      ),
       child: CatalogItems(catalog:catalog)
       );
       }

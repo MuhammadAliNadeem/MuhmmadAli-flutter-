@@ -10,7 +10,6 @@ class CatalogImage extends StatelessWidget {
 final String image;
   @override
   Widget build(BuildContext context) {
-    return Image.network(image)
-          .box.rounded.p16.make().w40(context).h24(context);
+    return Image.network(image).box.rounded.p16.make().w40(context).h24(context);
   }
 }

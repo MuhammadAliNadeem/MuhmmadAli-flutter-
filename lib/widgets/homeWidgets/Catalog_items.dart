@@ -55,7 +55,8 @@ class CatalogItems extends StatelessWidget {
             ],
            ).pOnly(right: 20)
       ],
-          ))
+          )
+          )
          ],
       )
       // py a card means vertical space

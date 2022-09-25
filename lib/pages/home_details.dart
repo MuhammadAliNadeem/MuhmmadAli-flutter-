@@ -27,23 +27,26 @@ bottomNavigationBar:  Container (
             children: [
   
              "\$${catalog.price}".text.bold.xl2.color(context.theme.accentColor).bold.make(),
+
         FloatingActionButton(onPressed: (() {Navigator.pushNamed(context, MyRoutes.CartRoute);}),
+
         backgroundColor: context.theme.buttonColor,
-        child: Icon(CupertinoIcons.cart_fill_badge_plus,color: Colors.white,) ,
-  ),
-            //  ElevatedButton(onPressed:() { Navigator.pushNamed(context, MyRoutes.CartRoute);},
+        child: Icon(CupertinoIcons.plus,color: Colors.white,) 
+
+         ),
+             ElevatedButton(onPressed:() { Navigator.pushNamed(context, MyRoutes.CartRoute);},
   
-            // style: ButtonStyle(
+            style: ButtonStyle(
   
-            //   backgroundColor: MaterialStateProperty.all(Colors.blue),
+              backgroundColor: MaterialStateProperty.all(context.theme.buttonColor),
   
-            //   shape: MaterialStateProperty.all( StadiumBorder())
+              shape: MaterialStateProperty.all( StadiumBorder())
   
-            //   ),
+              ),
   
-            //   child: "Add to cart".text.make(), 
+              child: "Add to cart".text.make(), 
   
-            //   ).wh(120, 40)
+              ).wh(110, 30)
   
               ],
   
@@ -66,7 +69,7 @@ body:SafeArea(
       child: VxArc(
       height: 30,
       edge: VxEdge.TOP,
-      arcType: VxArcType.CONVEY,
+      arcType: VxArcType.CONVEX,
     child: Container( 
       color:context.theme.cardColor,
       width: context.screenWidth,

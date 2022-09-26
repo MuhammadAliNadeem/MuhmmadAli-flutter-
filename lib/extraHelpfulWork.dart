@@ -62,3 +62,13 @@
     
   //     child: Text("Login"),),
   // SizedBox(height: 8,),
+
+
+  // ,
+  //                       {   "id": 8,
+  //                       "name": "Samsung S22 Ultra",
+  //                        "des": "Samsung 22'nd generation",
+  //                         "price":1300 ,
+  //                          "color": "#33505a",
+  //                           "image": "https://media.wired.com/photos/6202b99c2c286ef2d70b5b0a/master/pass/Gear-Samsung-Galaxy-S22-Ultra.jpg"
+  //                          }

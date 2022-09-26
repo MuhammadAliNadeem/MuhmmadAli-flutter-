@@ -14,7 +14,7 @@ class CatalogList extends StatelessWidget {
       shrinkWrap: true,
       itemCount: CatalogModel.items.length,
       itemBuilder: (context, index) {
-    final catalog= CatalogModel.setByPos(index);
+    final catalog= CatalogModel.items[index];
 // inkwell gives ontap function
    return InkWell
     (

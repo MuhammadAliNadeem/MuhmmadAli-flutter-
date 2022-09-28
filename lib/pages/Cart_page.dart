@@ -2,6 +2,7 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
+import 'package:practice/models/Cart.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class CartPage extends StatelessWidget {
@@ -27,13 +28,14 @@ class CartPage extends StatelessWidget {
   }
 }
 class _CartTotal extends StatelessWidget {
+  final _cart=CartModel();
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          "\$Total price".text.xl4.color(context.accentColor).make(),
+          "\$${_cart.totalprice}".text.xl4.color(context.accentColor).make(),
          ElevatedButton(
           onPressed: (() {
             ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: "Buying not supported yet".text.center.make()   ));
@@ -55,16 +57,17 @@ class _CartTotal extends StatelessWidget {
 }
 
 class _CartListState extends State<CartList> {
+  final _cart=CartModel();
   @override
   Widget build(BuildContext context) {
     return  ListView.builder(
-        itemCount: 10,
+        itemCount: _cart.items.length,
         itemBuilder: (context, index) => ListTile(
           leading: Icon(Icons.done),
           trailing: IconButton(
             onPressed: (() {}),
            icon: Icon(Icons.remove_circle_outline)),
-          title: "item selected".text.make(),
+          title: _cart.items[index].name.text.make(),
         ) ,);
     
   }

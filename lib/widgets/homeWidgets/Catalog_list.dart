@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:practice/models/catalog.dart';
-import 'package:practice/pages/home_details.dart';
+import 'package:practice/pages/home_detailsPage.dart';
 import 'package:practice/widgets/homeWidgets/Catalog_items.dart';
 
 class CatalogList extends StatelessWidget {

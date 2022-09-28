@@ -1,10 +1,14 @@
 // ignore_for_file: file_names, unnecessary_null_comparison
-
 import 'package:practice/models/catalog.dart';
-
 class CartModel{
+
+static final cartModel = CartModel._internal();
+ CartModel._internal();
+ factory CartModel()=> cartModel;
+
+ 
   // catalog field
-  late CatalogModel _catalog;
+   CatalogModel _catalog=CatalogModel();
 
   // collection of ID's -store ID of each item
 final List<int> _itemsID =[];
@@ -14,6 +18,7 @@ CatalogModel get catalog =>_catalog;
 
 // set catalog
 set catalog(CatalogModel newcatalog){
+  
   assert (_catalog!=null);
   _catalog=newcatalog;
 }
@@ -34,4 +39,4 @@ void remove(Item item)
 {
   _itemsID.remove(item.id);
 }
-} 
+}

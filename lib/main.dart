@@ -1,5 +1,3 @@
-
-
 // ignore_for_file: prefer_const_constructors, duplicate_ignore
 import 'package:flutter/material.dart';
 import 'package:practice/pages/Cart_page.dart';
@@ -25,7 +23,7 @@ class MyApp extends StatelessWidget {
       //it will directly open thhe home page
       initialRoute: MyRoutes.HomeRoute,
 routes: {
-  "/":(context) => Loginpage(),
+  // "/":(context) => Loginpage(),
   MyRoutes.HomeRoute:(context)=> Homepage(),
   MyRoutes.LoginRoute:(context) => Loginpage(),
   MyRoutes.CartRoute: (context)=>CartPage()

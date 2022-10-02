@@ -1,7 +1,7 @@
-// ignore_for_file: prefer_const_constructors_in_immutables, unnecessary_null_comparison, prefer_const_constructors, deprecated_member_use, file_names, no_leading_underscores_for_local_identifiers
+// ignore_for_file: prefer_const_constructors_in_immutables, unnecessary_null_comparison, prefer_const_constructors, deprecated_member_use, file_names
 import 'package:flutter/material.dart';
-import 'package:practice/models/Cart.dart';
 import 'package:practice/models/catalog.dart';
+import 'package:practice/widgets/homeWidgets/AddToCart.dart';
 import 'package:velocity_x/velocity_x.dart';
 class HomeDetailPage extends StatelessWidget {
   final Item catalog;
@@ -27,14 +27,7 @@ bottomNavigationBar:  Container (
   
              "\$${catalog.price}".text.bold.xl2.color(context.theme.accentColor).bold.make(),
 
-        // FloatingActionButton(onPressed: (() {Navigator.pushNamed(context, MyRoutes.CartRoute);}),
-
-        // backgroundColor: context.theme.buttonColor,
-        // child: Icon(CupertinoIcons.plus,color: Colors.white,) 
-
-        //  ),
-             AddToCart(catalog: catalog,)
-  
+            AddToCart(catalog: catalog)
               ],
   
              ).p32(),
@@ -84,45 +77,5 @@ body:SafeArea(
      )
 )
     );
-  }
-}
-
-class AddToCart extends StatefulWidget {
-  final Item catalog ;
-  const AddToCart({
-    Key? key, required this.catalog,
-  }) : super(key: key);
-
-  @override
-  State<AddToCart> createState() => _AddToCartState();
-}
-
-class _AddToCartState extends State<AddToCart> {
-  
-  bool isAdded =false;
-  @override
-  Widget build(BuildContext context) {
-    return ElevatedButton(onPressed:() { 
-      isAdded =isAdded.toggle();
-      final _cart = CartModel();
-      final _catalog = CatalogModel();
-      _cart.catalog=_catalog;
-      _cart.add(widget.catalog);
-      setState(() {
-        
-      });
-    },
-  
-            style: ButtonStyle(
-  
-     backgroundColor: MaterialStateProperty.all(context.theme.buttonColor),
-  
-     shape: MaterialStateProperty.all( StadiumBorder())
-  
-     ),
-  
-     child:isAdded?Icon(Icons.done): "Add to cart".text.make(), 
-  
-     );
   }
 }

@@ -1,10 +1,10 @@
 // ignore_for_file: file_names, unnecessary_null_comparison
 import 'package:practice/models/catalog.dart';
 class CartModel{
-
-static final cartModel = CartModel._internal();
- CartModel._internal();
- factory CartModel()=> cartModel;
+// singelton:
+// static final cartModel = CartModel._internal();
+//  CartModel._internal();
+//  factory CartModel()=> cartModel;
 
  
   // catalog field

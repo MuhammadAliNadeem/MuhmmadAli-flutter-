@@ -1,7 +1,8 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first, prefer_const_constructors, deprecated_member_use
+// ignore_for_file: public_member_api_docs, sort_constructors_first, prefer_const_constructors, deprecated_member_use, no_leading_underscores_for_local_identifiers
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
+import 'package:practice/core/store.dart';
 import 'package:practice/models/Cart.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -28,9 +29,10 @@ class CartPage extends StatelessWidget {
   }
 }
 class _CartTotal extends StatelessWidget {
-  final _cart=CartModel();
+  
   @override
   Widget build(BuildContext context) {
+    final CartModel _cart =(VxState.store as MyStore).cart;
     return SizedBox(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -50,11 +52,12 @@ class _CartTotal extends StatelessWidget {
     );
   }
 }class CartList extends StatelessWidget{
-  final _cart=CartModel();
+  
 
-  CartList({super.key});
+  const CartList({super.key});
   @override
   Widget build(BuildContext context) {
+    final CartModel _cart=(VxState.store as MyStore).cart;
     return _cart.items.isEmpty?"Nothing To Show".text.xl3.make().centered(): ListView.builder(
         itemCount: _cart.items.length,
         itemBuilder: (context, index) => ListTile(

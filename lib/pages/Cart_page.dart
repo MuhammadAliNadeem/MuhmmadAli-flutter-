@@ -1,4 +1,4 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first, prefer_const_constructors, deprecated_member_use, no_leading_underscores_for_local_identifiers
+// ignore_for_file: public_member_api_docs, sort_constructors_first, prefer_const_constructors, deprecated_member_use, no_leading_underscores_for_local_identifiers, prefer_const_literals_to_create_immutables
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
@@ -37,7 +37,12 @@ class _CartTotal extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          "\$${_cart.totalprice}".text.xl4.color(context.accentColor).make(),
+          VxConsumer(
+            builder: (context, store, status) {
+              return "\$${_cart.totalprice}".text.xl4.color(context.accentColor).make();
+            },
+             mutations: {RemoveMutation},
+             ),
          ElevatedButton(
           onPressed: (() {
             ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: "Buying not supported yet".text.center.make()   ));
@@ -57,6 +62,7 @@ class _CartTotal extends StatelessWidget {
   const CartList({super.key});
   @override
   Widget build(BuildContext context) {
+    VxState.watch(context, on: [RemoveMutation]);
     final CartModel _cart=(VxState.store as MyStore).cart;
     return _cart.items.isEmpty?"Nothing To Show".text.xl3.make().centered(): ListView.builder(
         itemCount: _cart.items.length,
@@ -64,8 +70,7 @@ class _CartTotal extends StatelessWidget {
           leading: Icon(Icons.done),
           trailing: IconButton(
             onPressed: (() {
-              _cart.remove(_cart.items[index]);
-              // setState(() {});
+            RemoveMutation(_cart.items[index]);
             }),
            icon: Icon(Icons.remove_circle_outline)
            ),

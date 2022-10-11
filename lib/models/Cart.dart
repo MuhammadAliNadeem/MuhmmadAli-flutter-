@@ -25,7 +25,7 @@ set catalog(CatalogModel newcatalog){
   _catalog=newcatalog;
 }
 // get items into the cart
-List<Item> get items => _itemsID.map((id) =>_catalog.setById(id)).toList();
+List<Item> get items => _itemsID.map((id) =>_catalog.getById(id)).toList();
 
 // get total price
 num get totalprice => items.fold(0, (total, current) => total+current.price);

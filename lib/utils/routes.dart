@@ -3,8 +3,8 @@
 class MyRoutes
 {
   
-  static String LoginRoute='/Login';
-  static String HomeRoute='/Home'; 
-  static String HomeDetailsRoute='/HomeDetails';
-  static String CartRoute='/Cart';
+  static String LoginRoute='/login';
+  static String HomeRoute='/home'; 
+  static String HomeDetailsRoute='/homeDetails';
+  static String CartRoute='/cart';
 }

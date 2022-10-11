@@ -1,5 +1,7 @@
 // ignore_for_file: prefer_const_constructors, sort_child_properties_last, use_build_context_synchronously, unused_field, deprecated_member_use
 
+
+
 import 'package:flutter/material.dart';
 import 'package:practice/utils/routes.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -22,7 +24,7 @@ setState(() {
           changedbutton=true;
   });
         await Future.delayed(Duration(seconds: 1));
-         await Navigator.pushNamed(context, MyRoutes.HomeRoute);
+         await context.vxNav.push(Uri.parse(MyRoutes.HomeRoute));
         
         setState(() {
           changedbutton=false;

@@ -16,25 +16,23 @@ class CatalogItems extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return VxBox(
-  
-      child: Row( 
-         children: [
+    var children2 = [
           Hero(
             tag: Key(catalog.id.toString()),
             child: CatalogImage(image: catalog.image)
             ) ,
           Expanded(child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment:context.isMobile? CrossAxisAlignment.start:CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
       children: [
+        
         catalog.name.text.lg.bold. color(context.accentColor).make(),
         catalog.des.text.textStyle(context.captionStyle).make(),
         10.heightBox,
 
         ButtonBar(
 
-          alignment: MainAxisAlignment.spaceBetween,
+          alignment:context.isMobile? MainAxisAlignment.spaceBetween:MainAxisAlignment.spaceAround,
           buttonPadding: EdgeInsets.zero,
           
           children: [
@@ -48,10 +46,14 @@ class CatalogItems extends StatelessWidget {
       ],
           )
           )
-         ],
-      )
+         ];
+    return VxBox(
+  
+      child:context.isMobile? Row( 
+         children: children2,
+      ):Column(children: children2,)
       // py a card means vertical space
-    ).color(context.cardColor).square(120).rounded.make().py16();
+    ).color(context.cardColor).square(120).rounded.make().py8();
   }
 }
 

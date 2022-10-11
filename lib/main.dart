@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       
       debugShowCheckedModeBanner: false,
       
-      //it will directly open thhe home page
+      //it will directly open the home page
       initialRoute: MyRoutes.HomeRoute,
 routes: {
   // "/":(context) => Loginpage(),

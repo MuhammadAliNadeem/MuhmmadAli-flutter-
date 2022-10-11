@@ -56,7 +56,28 @@
                        "price":499 ,
                         "color": "#33505a",
                          "image": "https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-7-plus-03.jpg"
-                        }
+                        },
+                        {   "id": 8,
+                        "name": "Ipad mini 6",
+                         "des": "Apple ipad 6th generation",
+                          "price":499 ,
+                           "color": "#33505a",
+                            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOFzMr7eCVhr_jbLtQJySeNxU1ghb55-J2X0DOhbetMA&s/"
+                           },
+                           {   "id": 9,
+                           "name": "Ipad air",
+                            "des": "5th generation",
+                             "price":547 ,
+                              "color": "#33505a",
+                               "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRT8o-F5oTugeVEnwOuHlD4tRDuCwJIBNJ3kQNsq5_5dg&s"
+                              },
+                              {   "id": 10,
+                              "name": "Ipad Pro",
+                               "des": "9th generation",
+                                "price":1077 ,
+                                 "color": "#33505a",
+                                  "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBJCHt8RR_BAca5zrl5fqDvgXMdIVZs3o0bIBiyVhqqQ&s"
+                                 }
                           
     ]
 }
